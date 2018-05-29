@@ -27,24 +27,23 @@ public class GameActivity extends AppCompatActivity {
         rockButton = findViewById(R.id.rock_button);
         paperButton = findViewById(R.id.paper_button);
         scissorsButton = findViewById(R.id.scissors_button);
+        game = new Game();
+        android = new Android();
     }
 
     public void onRockButtonClicked(View button){
-        game = new Game();
-        android = new Android();
         result.setText(game.gameOutcome(ChoiceType.ROCK, android.getChoiceForAndroid()));
+        counter.setText(game.getScores());
     }
 
     public void onPaperButtonClicked(View button){
-        game = new Game();
-        android = new Android();
         result.setText(game.gameOutcome(ChoiceType.PAPER, android.getChoiceForAndroid()));
+        counter.setText(game.getScores());
     }
 
     public void onScissorsButtonClicked(View button){
-        game = new Game();
-        android = new Android();
         result.setText(game.gameOutcome(ChoiceType.SCISSORS, android.getChoiceForAndroid()));
+        counter.setText(game.getScores());
     }
 
 

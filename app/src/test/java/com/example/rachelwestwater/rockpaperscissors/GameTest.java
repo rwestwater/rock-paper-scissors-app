@@ -13,6 +13,9 @@ public class GameTest {
     Android android;
     User user;
     Game game;
+    private int playerScore = 0;
+    private int androidScore = 0;
+    private int drawScore = 0;
 
     @Before
     public void before() {
@@ -48,6 +51,40 @@ public class GameTest {
         assertEquals("You win!\n" + "Android selected: ROCK\n" + "You selected: PAPER", game.gameOutcome(ChoiceType.PAPER, ChoiceType.ROCK));
         assertEquals("Android has won!\n" + "Android selected: SCISSORS\n" + "You selected: PAPER", game.gameOutcome(ChoiceType.PAPER, ChoiceType.SCISSORS));
     }
+
+    @Test
+    public void canGetDrawScore(){
+          assertEquals(0, game.getDrawScore());
+    }
+
+    @Test
+    public void canGetPlayerScore(){
+        assertEquals(0, game.getPlayerScore());
+    }
+
+    @Test
+    public void canGetAndroidScore(){
+        assertEquals(0, game.getAndroidScore());
+    }
+
+    @Test
+    public void canAddToPlayerScore(){
+        game.gameOutcome(ChoiceType.PAPER, ChoiceType.ROCK);
+        assertEquals(1, game.getPlayerScore());
+    }
+
+    @Test
+    public void canAddToDrawScore(){
+        game.gameOutcome(ChoiceType.ROCK, ChoiceType.ROCK);
+        assertEquals(1, game.getDrawScore());
+    }
+
+    @Test
+    public void canAddToAndroidScore(){
+        game.gameOutcome(ChoiceType.PAPER, ChoiceType.SCISSORS);
+        assertEquals(1, game.getAndroidScore());
+    }
+
 
 
 }
