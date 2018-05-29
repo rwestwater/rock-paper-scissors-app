@@ -30,5 +30,23 @@ public class GameTest {
         assertEquals(ChoiceType.PAPER, android.getChoiceForAndroid());
     }
 
+    @Test
+    public void ScissorsCanWin(){
+        assertEquals(ResultType.WIN, game.gameOutcome(ChoiceType.SCISSORS, ChoiceType.PAPER));
+        assertEquals(ResultType.LOSS, game.gameOutcome(ChoiceType.SCISSORS, ChoiceType.ROCK));
+    }
+
+    @Test
+    public void RockCanWin(){
+        assertEquals(ResultType.WIN, game.gameOutcome(ChoiceType.ROCK, ChoiceType.SCISSORS));
+        assertEquals(ResultType.LOSS, game.gameOutcome(ChoiceType.ROCK, ChoiceType.PAPER));
+    }
+
+    @Test
+    public void PaperCanWin(){
+        assertEquals(ResultType.WIN, game.gameOutcome(ChoiceType.PAPER, ChoiceType.ROCK));
+        assertEquals(ResultType.LOSS, game.gameOutcome(ChoiceType.PAPER, ChoiceType.SCISSORS));
+    }
+
 
 }

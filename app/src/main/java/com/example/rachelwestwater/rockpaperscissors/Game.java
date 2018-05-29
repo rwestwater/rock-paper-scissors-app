@@ -12,4 +12,12 @@ public class Game {
     public static void main(String[] args) {
     }
 
+    public ResultType gameOutcome(ChoiceType userChoice, ChoiceType androidChoice) {
+        if (userChoice == androidChoice) return resultType.DRAW;
+        if (userChoice.getWinsAgainst() == androidChoice) {
+            return resultType.WIN;
+        } else {
+            return resultType.LOSS;
+        }
+    }
 }
