@@ -1,7 +1,7 @@
 package com.example.rachelwestwater.rockpaperscissors.enums;
 
-public enum choiceType {
-    ROCK,
-    PAPER,
-    SCISSORS
+public enum ResultType {
+    WIN,
+    LOSS,
+    DRAW
 }

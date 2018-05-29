@@ -1,4 +1,34 @@
 package com.example.rachelwestwater.rockpaperscissors;
 
+import com.example.rachelwestwater.rockpaperscissors.enums.ChoiceType;
+import com.example.rachelwestwater.rockpaperscissors.enums.ResultType;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class GameTest {
+    Android android;
+    User user;
+    Game game;
+
+    @Before
+    public void before() {
+        game = new Game();
+        user = new User(ChoiceType.PAPER);
+        android = new Android(ChoiceType.ROCK);
+    }
+
+    @Test
+    public void canGetChoice() {
+        assertEquals(ChoiceType.PAPER, user.getChoice());
+    }
+
+    @Test
+    public void canGetChoiceForAndroid() {
+        assertEquals(ChoiceType.PAPER, android.getChoiceForAndroid());
+    }
+
+
 }
