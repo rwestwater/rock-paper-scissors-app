@@ -17,7 +17,7 @@ public class GameTest {
     public void before() {
         game = new Game();
         user = new User(ChoiceType.PAPER);
-        android = new Android(ChoiceType.ROCK);
+        android = new Android();
     }
 
     @Test

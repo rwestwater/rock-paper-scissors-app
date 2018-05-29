@@ -6,10 +6,8 @@ import java.lang.reflect.Array;
 import java.util.Random;
 
 public class Android {
-    private ChoiceType choiceType;
 
-    public Android(ChoiceType choiceType){
-        this.choiceType = choiceType;
+    public Android(){
     }
 
     public ChoiceType getChoiceForAndroid() {
