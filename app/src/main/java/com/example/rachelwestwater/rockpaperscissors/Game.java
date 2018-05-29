@@ -4,20 +4,18 @@ import com.example.rachelwestwater.rockpaperscissors.enums.ResultType;
 
 public class Game {
 
-    private User user;
-    private Android android;
     private ChoiceType choiceType;
     private ResultType resultType;
 
     public static void main(String[] args) {
     }
 
-    public ResultType gameOutcome(ChoiceType userChoice, ChoiceType androidChoice) {
-        if (userChoice == androidChoice) return resultType.DRAW;
+    public String gameOutcome(ChoiceType userChoice, ChoiceType androidChoice) {
+        if (userChoice == androidChoice) return "No one wins :( Android selected: " + androidChoice.toString() + " Player selected " + userChoice.toString();
         if (userChoice.getWinsAgainst() == androidChoice) {
-            return resultType.WIN;
+            return "Player has won!  Android selected: " + androidChoice.toString() + " Player selected " + userChoice.toString();
         } else {
-            return resultType.LOSS;
+            return "Android has won!  Android selected: " + androidChoice.toString() + " Player selected " + userChoice.toString();
         }
     }
 }
