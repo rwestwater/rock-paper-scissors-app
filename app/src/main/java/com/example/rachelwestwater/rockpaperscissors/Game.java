@@ -11,11 +11,21 @@ public class Game {
     }
 
     public String gameOutcome(ChoiceType userChoice, ChoiceType androidChoice) {
-        if (userChoice == androidChoice) return "No one wins :( Android selected: " + androidChoice.toString() + " Player selected " + userChoice.toString();
-        if (userChoice.getWinsAgainst() == androidChoice) {
-            return "Player has won!  Android selected: " + androidChoice.toString() + " Player selected " + userChoice.toString();
+        StringBuilder sb = new StringBuilder();
+        if (userChoice == androidChoice) {
+            sb.append("It's a draw!");
+        } else if (userChoice.getWinsAgainst() == androidChoice) {
+            sb.append("You win!");
         } else {
-            return "Android has won!  Android selected: " + androidChoice.toString() + " Player selected " + userChoice.toString();
+            sb.append("Android has won!");
         }
+
+        sb.append("\n");
+        sb.append("Android selected: ");
+        sb.append(androidChoice.toString());
+        sb.append("\n");
+        sb.append("You selected: ");
+        sb.append(userChoice.toString());
+        return sb.toString();
     }
 }

@@ -30,8 +30,7 @@ public class GameActivity extends AppCompatActivity {
     public void onRockButtonClicked(View button){
         game = new Game();
         android = new Android();
-        String winner = game.gameOutcome(ChoiceType.ROCK, android.getChoiceForAndroid());
-        result.setText(winner);
+        result.setText(game.gameOutcome(ChoiceType.ROCK, android.getChoiceForAndroid()));
     }
 
     public void onPaperButtonClicked(View button){
