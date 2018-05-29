@@ -6,6 +6,9 @@ public class Game {
 
     private ChoiceType choiceType;
     private ResultType resultType;
+    private int player_score = 0;
+    private int android_score = 0;
+    private int draw_score = 0;
 
     public static void main(String[] args) {
     }
@@ -13,10 +16,13 @@ public class Game {
     public String gameOutcome(ChoiceType userChoice, ChoiceType androidChoice) {
         StringBuilder sb = new StringBuilder();
         if (userChoice == androidChoice) {
+            draw_score ++;
             sb.append("It's a draw!");
         } else if (userChoice.getWinsAgainst() == androidChoice) {
+            player_score ++;
             sb.append("You win!");
         } else {
+            android_score ++;
             sb.append("Android has won!");
         }
 

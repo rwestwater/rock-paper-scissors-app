@@ -16,12 +16,14 @@ public class GameActivity extends AppCompatActivity {
     TextView result;
     Game game;
     Android android;
+    TextView counter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         result = findViewById(R.id.result);
+        counter = findViewById(R.id.counter);
         rockButton = findViewById(R.id.rock_button);
         paperButton = findViewById(R.id.paper_button);
         scissorsButton = findViewById(R.id.scissors_button);
